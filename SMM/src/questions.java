@@ -10,14 +10,27 @@ public class questions {
 		
 		this.type = type;
 		this.amt = amt;
+		question = new problem[amt];
+		key = new double[amt];
 		
 		for(int i = 0; i < amt; i++) {
-			
-			question[i] = new problem(type);
-			key[i] = question[i].getAnswer();
-			
+			problem temp = new problem(type);
+			question[i] = temp;
+			key[i] = question[i].getAnswer();	
 		}
 		
+	}
+	public problem[] getQuestion() {
+		return question;
+	}
+	public void setQuestion(problem[] question) {
+		this.question = question;
+	}
+	public double[] getKey() {
+		return key;
+	}
+	public void setKey(double[] key) {
+		this.key = key;
 	}
 	public String getType() {
 		return type;

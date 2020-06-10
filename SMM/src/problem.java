@@ -5,14 +5,17 @@ public class problem {
 	public static String[] types = new String[] {"add","subtract","multiply","divide"};
 	public static String[] operators = new String[] {"+","-","*","/"};
 	private double answer;
-	private int a, b;
+	private int a = 0, b = 0;
 	private String operator = "";
 	
 	public problem(String type) {
 		
 		this.type = type;
-		a = numGenerator(); 
-		b = numGenerator();
+		do{
+			a = numGenerator(); 
+			b = numGenerator();
+		} while(a<b);
+		
 		
 	}
 	
@@ -38,17 +41,17 @@ public class problem {
 	}
 	
 	public double getAnswer() {
-		
+		answer = -1;
 		if(operator.equals("+"))
-			return a + b;
+			answer = a + b;
 		if(operator.equals("-"))
-			return a - b;
+			answer = a - b;
 		if(operator.equals("*"))
-			return a * b;
+			answer = a * b;
 		if(operator.equals("/"))
-			return a / b;
+			answer = a / b;
 		
-		return -1;
+		return answer;
 		
 	}
 	

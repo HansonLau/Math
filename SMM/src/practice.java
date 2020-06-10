@@ -6,8 +6,10 @@ import javax.swing.JOptionPane;
 
 public class practice {
 	
-	public String temptype;
-	public int tempamt; 
+	private String temptype;
+	private int tempamt;
+	private double correct = 0; 
+	
 	public practice() {
 
 		int ans = 1;
@@ -29,7 +31,23 @@ public class practice {
 			if (ans == 2)
 				System.exit(0);
 		}
+		
+		//generate questions
+		questions q = new questions(temptype, tempamt);
+		
+		//shows questions
+		for(problem temp: q.getQuestion()) {
 			
+			int input = Integer.parseInt(JOptionPane.showInputDialog(temp.getProblem()));
+			if(input == temp.getAnswer())
+				correct++;
+		}
+		
+		
+		int percent = (int) ((((correct/(q.getQuestion().length))*1000) + 5)/10);
+		
+		JOptionPane.showMessageDialog(null, "You got " + percent + "% correct.");
+		
 	}
 	
 	private Component typ() {
