@@ -1,5 +1,4 @@
 import java.awt.Component;
-import java.util.*;
 import javax.swing.JOptionPane;
 
 //https://github.com/HansonLau/SMM.git
