@@ -50,6 +50,7 @@ public class problem {
 			answer = a * b;
 		if(operator.equals("/"))
 			answer = a / b;
+		// make the division round to first decimal or two
 		
 		return answer;
 		
