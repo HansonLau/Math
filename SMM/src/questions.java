@@ -15,8 +15,13 @@ public class questions {
 		
 		for(int i = 0; i < amt; i++) {
 			problem temp = new problem(type);
-			question[i] = temp;
-			key[i] = question[i].getAnswer();	
+			question[i] = temp;	
+		}
+		
+		for(int i = 0; i < amt; i++) {
+			
+			key[i] = question[i].getAnswer();
+			
 		}
 		
 	}

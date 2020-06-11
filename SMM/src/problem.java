@@ -5,7 +5,7 @@ public class problem {
 	public static String[] types = new String[] {"add","subtract","multiply","divide"};
 	public static String[] operators = new String[] {"+","-","*","/"};
 	private double answer;
-	private int a = 0, b = 0;
+	private double a = 0, b = 0;
 	private String operator = "";
 	
 	public problem(String type) {
@@ -16,18 +16,16 @@ public class problem {
 			b = numGenerator();
 		} while(a<b);
 		
-		
-	}
-	
-	
-	public String getProblem() {
-		
 		for(int i = 0; i < 4; i++) {
 			if (type.equalsIgnoreCase(types[i]))
 				operator = operators[i];
 				
 		}
- 		
+	}
+	
+	
+	public String getProblem() {
+		
 		return  a + operator + b;
 		
 	}
@@ -48,10 +46,18 @@ public class problem {
 			answer = a - b;
 		if(operator.equals("*"))
 			answer = a * b;
-		if(operator.equals("/"))
+		if(operator.equals("/")) {
+			//rounds to first decimal
 			answer = a / b;
+			System.out.println(answer);
+			answer = (answer * 10) + 0.5;
+			System.out.println(answer);
+			int temp = (int) answer;
+			answer = (double)temp/10;
+			System.out.println(answer);
+		}
 		// make the division round to first decimal or two
-		
+		System.out.println(answer);
 		return answer;
 		
 	}
