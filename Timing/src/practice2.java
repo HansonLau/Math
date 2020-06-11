@@ -4,14 +4,14 @@ import java.util.Arrays;
 
 //https://github.com/HansonLau/SMM.git
 
-public class practice {
+public class practice2 {
 	
 	private String type;
 	private int amt;
 	private double correct = 0; 
 	private double[] user;
 	
-	public practice() {
+	public practice2() {
 
 		int ans = 1;
 		JOptionPane.showMessageDialog(null, "Types of math: \n add\n subtract\n multiply\n divide");
@@ -34,12 +34,12 @@ public class practice {
 		}
 		
 		//generate questions
-		questions q = new questions(type, amt);
+		questions2 q = new questions2(type, amt);
 		user = new double[amt];
 		//shows questions
 		
 		int i = 0;
-		for(problem temp: q.getQuestion()) {
+		for(problem2 temp: q.getQuestion()) {
 			
 			if(type.equals("divide")) {
 				double input2 = Double.parseDouble(JOptionPane.showInputDialog(temp.getProblem()));
@@ -78,7 +78,7 @@ public class practice {
 	
 	
 	public static void main(String[] args) {
-		new practice();
+		new practice2();
 		
 	}
 
