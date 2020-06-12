@@ -40,7 +40,7 @@ public class practice2 {
 		questions2 q = new questions2(type, amt);
 		user = new double[amt];
 		//shows questions
-		long startTime = System.currentTimeMillis();
+		long startTime = System.currentTimeMillis();  // timer
 		double elapsedTime = 0;
 		while (elapsedTime < 2*60*1000) {
 			int i = 0;
