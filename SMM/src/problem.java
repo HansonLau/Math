@@ -26,7 +26,7 @@ public class problem {
 	
 	public String getProblem() {
 		
-		return  a + operator + b;
+		return  a + " " + operator + " " + b;
 		
 	}
 	
@@ -49,15 +49,12 @@ public class problem {
 		if(operator.equals("/")) {
 			//rounds to first decimal
 			answer = a / b;
-			System.out.println(answer);
 			answer = (answer * 10) + 0.5;
-			System.out.println(answer);
 			int temp = (int) answer;
 			answer = (double)temp/10;
-			System.out.println(answer);
+
 		}
 		// make the division round to first decimal or two
-		System.out.println(answer);
 		return answer;
 		
 	}

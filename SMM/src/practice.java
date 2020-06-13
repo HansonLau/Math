@@ -52,28 +52,27 @@ public class practice {
 				}
 					
 				else {
-					int input = Integer.parseInt(JOptionPane.showInputDialog("Time : " + elapsedTime +" " +temp.getProblem()));
+					int input = Integer.parseInt(JOptionPane.showInputDialog(temp.getProblem()));
 					if(input == temp.getAnswer())
 						correct++;
 					user[i] = input;
 				}
 				i++;
 				elapsedTime = (new Date()).getTime() - startTime;
-				System.out.println(elapsedTime + "milli seconds");
 			}
 			break;
 		}
 		
 		
 		int percent = (int) ((((correct/(q.getQuestion().length))*1000) + 5)/10);
-		
-		JOptionPane.showMessageDialog(null, "You got " + percent + "% correct.\n"
-				+ "Your answers: " + Arrays.toString(user)
-				+ "\nAnswers: " + Arrays.toString(q.getKey()));
 		elapsedTime = (int)elapsedTime/10; 
 		elapsedTime = elapsedTime/100; // rounding to one decimal
 		
-		JOptionPane.showMessageDialog(null, "It took " + elapsedTime + " seconds."); // add time
+		JOptionPane.showMessageDialog(null, "You got " + percent + "% correct.\n"
+				+ "Your answers: " + Arrays.toString(user)
+				+ "\nAnswers: " + Arrays.toString(q.getKey())
+				+ "\nFinished in " + elapsedTime + " seconds!"); // add time
+
 	}
 	
 	private Component typ() {
